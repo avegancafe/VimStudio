@@ -3,6 +3,13 @@
 
 ---
 
+## Table of contents
+
+- [Installation](https://github.com/avegancafe/VimStudio#Installation)
+    - [Ubuntu](https://github.com/avegancafe/VimStudio/tree/main#ubuntu)
+    - [macOS](https://github.com/avegancafe/VimStudio/tree/main#macos)
+- [Fonts](https://github.com/avegancafe/VimStudio#Fonts)
+
 A simple neovim configuration with easy configuration via [fennel-lang](https://fennel-lang.org/) and lua.
 
 To install, simply run the following:
@@ -37,3 +44,11 @@ $ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 $ brew install fd nodejs ripgrep ag neovim
 # restart your terminal after installing everything
 ```
+
+## Fonts
+
+I would recommend using iosevka, which I've [linked a nerd-font-patched
+version](https://github.com/avegancafe/VimStudio/blob/main/assets/iosevka.ttf)
+in the repo as well. In general, any nerdfont should work though. If you want to
+use your own font, you can [patch your font yourself](https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FontPatcher.zip)
+(instructions on how to do so contained in the zip download fron nerdfonts).
