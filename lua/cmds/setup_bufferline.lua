@@ -1,9 +1,9 @@
 local M = {}
 
 function M.setup(buf_mode)
-	local colors = require('bamboo.colors')
+	local colors = require("bamboo.colors")
 
-	require('bufferline').setup({
+	require("bufferline").setup({
 		highlights = {
 			indicator_selected = {
 				fg = colors.green,
@@ -73,10 +73,10 @@ function M.setup(buf_mode)
 			show_buffer_icons = false,
 			offsets = {
 				{
-					filetype = 'NvimTree',
-					text = 'File Explorer',
-					highlight = 'Directory',
-					text_align = 'left',
+					filetype = "NvimTree",
+					text = "File Explorer",
+					highlight = "Directory",
+					text_align = "left",
 				},
 			},
 		},

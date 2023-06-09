@@ -1,1 +1,1 @@
-(tset vim.g :indentLine_char_list [ "|" "¦" "┆" "┊" ])
+(tset vim.g :indentLine_char_list ["|" "¦" "┆" "┊"])

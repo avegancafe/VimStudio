@@ -13,6 +13,7 @@
 (normal-map :<leader>h ":Dashboard<cr>")
 (normal-map :gQ
             ":echo \"Ex mode disabled. Re-enable in your mappigns if you'd like to use it.\"<cr>")
+
 (vim.keymap.set :n :zR (. (require :ufo) :openAllFolds))
 (vim.keymap.set :n :zM (. (require :ufo) :closeAllFolds))
 (tset _G :ToggleNumbers
@@ -45,6 +46,7 @@
         (let [files-output (vim.api.nvim_exec :!changed_files true)
               changed-files (. (vim.split files-output "\n") 3)]
           (vim.cmd (.. "args " changed-files)))))
+
 (normal-map :<leader>sc ":call v:lua.EditChangedFiles()<cr>")
 (normal-map :<leader>b ":BufferLinePick<cr>" {:silent true})
 (normal-map :<leader>bb ":BufferLinePick<cr>" {:silent true})
@@ -54,6 +56,7 @@
 (normal-map :<leader>t ":Lspsaga term_toggle<cr>" {:silent true})
 (normal-map :<leader>bt ":lua require(\"cmds/switch_bufferline_mode\")()<cr>"
             {:silent true})
+
 (normal-map :<leader>rs ":let @a=@*<cr>" {:silent true})
 (normal-map :<leader>rsa ":let @a=@*<cr>" {:silent true})
 (normal-map :<leader>rsb ":let @b=@*<cr>" {:silent true})
