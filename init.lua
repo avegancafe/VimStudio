@@ -37,6 +37,7 @@ vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
 vim.opt.tabstop = 2
 vim.opt.foldmethod = 'expr'
+vim.opt.fillchars = {eob = ' '}
 
 vim.opt.foldcolumn = '1'
 vim.opt.foldlevel = 99
