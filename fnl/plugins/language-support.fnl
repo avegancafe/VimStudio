@@ -7,12 +7,11 @@
 (pack :othree/yajs.vim {})
 
 ; ==========================================
-; ======== General language support ========
+; ============== LSP plugins ===============
 ; ==========================================
  (pack :j-hui/fidget.nvim
       {:config true
        :opts {:text {:spinner :dots :done "✓"} :timer {:spinner_rate 50}}})
-(pack :smjonas/inc-rename.nvim {:config true})
 (pack :glepnir/lspsaga.nvim {:dependencies [:kyazdani42/nvim-web-devicons
                                             :nvim-treesitter/nvim-treesitter]
                              :init (fn []
@@ -43,6 +42,7 @@
                                                        :respect_root true
                                                        :color_mode true}}
                              :config true})
+(pack :smjonas/inc-rename.nvim {:config true})
 (pack :williamboman/mason.nvim
        {:config (fn []
                   (local mason (require :mason))
@@ -56,7 +56,6 @@
  (pack :neovim/nvim-lspconfig {})
  (pack :onsails/lspkind.nvim {})
  (pack :ray-x/lsp_signature.nvim {:config true})
-(pack :sbdchd/neoformat {})
 (pack :hrsh7th/nvim-cmp
       {:dependencies [:hrsh7th/cmp-nvim-lsp
                       :neovim/nvim-lspconfig
@@ -83,6 +82,13 @@
                                                                     :<Tab> (cmp.mapping.confirm {:select true})})
                                :sources (cmp.config.sources [{:name :nvim_lsp}
                                                              {:name :buffer}])})))})
+(pack :folke/trouble.nvim)
+
+; ==========================================
+; ======== General language support ========
+; ==========================================
+(pack :sbdchd/neoformat {})
+(pack :tpope/vim-sleuth)
 (pack :mfussenegger/nvim-lint {:config (fn []
                                          (let [lint (require :lint)
                                                golangcilint (require :lint.linters.golangcilint)]
@@ -106,8 +112,6 @@
                                                                                        (lint.try_lint nil
                                                                                                       {:ignore_errors true})))})
                                            nil))})
-(pack :tpope/vim-sleuth)
-(pack :folke/trouble.nvim)
 (pack :nvim-treesitter/nvim-treesitter
       {:build ":TSUpdate"
        :config (fn []

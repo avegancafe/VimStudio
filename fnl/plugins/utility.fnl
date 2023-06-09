@@ -1,6 +1,9 @@
 (import-macros {: pack} :macros)
 
 [
+; ==========================================
+; ================= Theming ================
+; ==========================================
 (pack :RRethy/vim-illuminate
       {:config (fn []
                  (let [illuminate (require :illuminate)]
@@ -8,6 +11,19 @@
                                                                :lspsagaoutline
                                                                :NvimTree]})))})
 (pack :frazrepo/vim-rainbow)
+(pack :Yggdroot/indentLine
+      {:config (fn []
+                 (tset vim.g :indentLine_fileTypeExclude [:dashboard :fennel :mason :text])
+                 (tset vim.g :indentLine_concealcursor :n)
+                 (tset vim.g :indentLine_char_list ["|" "¦" "┆" "┊"]))})
+(pack :akinsho/bufferline.nvim
+      {:dependencies [:ribru17/bamboo.nvim]
+       :config (fn []
+                 ((. (require :cmds.setup_bufferline) :setup) :buffers))})
+
+; ==========================================
+; ================ Movement ================
+; ==========================================
 (pack :folke/which-key.nvim {:config true :opts {:window {:border :rounded}}})
 (pack :kevinhwang91/nvim-ufo
       {:dependencies [:kevinhwang91/promise-async
@@ -34,15 +50,6 @@
        :config true
        :opts {:provider_selector (fn []
                                    [:treesitter :indent])}})
-(pack :Yggdroot/indentLine
-      {:config (fn []
-                 (tset vim.g :indentLine_fileTypeExclude [:dashboard :fennel :mason :text])
-                 (tset vim.g :indentLine_concealcursor :n)
-                 (tset vim.g :indentLine_char_list ["|" "¦" "┆" "┊"]))})
 (pack :lewis6991/gitsigns.nvim {:dependencies [:nvim-lua/plenary.nvim]
                                 :config true})
-(pack :akinsho/bufferline.nvim
-      {:dependencies [:ribru17/bamboo.nvim]
-       :config (fn []
-                 ((. (require :cmds.setup_bufferline) :setup) :buffers))})
  ]
