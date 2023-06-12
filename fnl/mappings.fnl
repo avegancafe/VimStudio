@@ -1,8 +1,8 @@
-(local utils (require :utils.index))
+(local {: merge} (require :utils))
 (fn create-map-func [mode]
   (fn [binding command opts]
     (local final-opts {:noremap true})
-    (utils.merge final-opts (or opts {}))
+    (merge final-opts (or opts {}))
     (vim.api.nvim_set_keymap mode binding command final-opts)))
 
 (local normal-map (create-map-func :n))
