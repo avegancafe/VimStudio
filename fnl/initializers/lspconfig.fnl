@@ -1,7 +1,6 @@
 (import-macros {: deepcopy} :macros)
 
 (local nvim-lsp (require :lspconfig))
-(local navic (require :nvim-navic))
 (fn on-attach [client bufnr]
   ((. (require :lsp_signature) :on_attach) {:bind true
                                             :floating_window false
@@ -11,8 +10,6 @@
   (when (= client.name :yamlls)
     (local ns (vim.lsp.diagnostic.get_namespace client.id))
     (vim.diagnostic.disable nil ns))
-  (when client.server_capabilities.documentSymbolProvider
-    (navic.attach client bufnr))
 
   (fn buf-set-keymap [...] (vim.api.nvim_buf_set_keymap bufnr ...))
 
