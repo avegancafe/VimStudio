@@ -11,7 +11,7 @@
 (normal-map :<leader>dd ":TroubleToggle document_diagnostics<cr>")
 (normal-map :<leader>d ":TroubleToggle<cr>")
 (normal-map :gQ
-            ":echo \"Ex mode disabled. Re-enable in your mappigns if you'd like to use it.\"<cr>")
+            ":echo \"Ex mode disabled. Re-enable in your mappings if you'd like to use it.\"<cr>")
 
 (vim.keymap.set :n :zR (. (require :ufo) :openAllFolds))
 (vim.keymap.set :n :zM (. (require :ufo) :closeAllFolds))
