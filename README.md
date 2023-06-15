@@ -20,6 +20,7 @@ out of your way. Currently VimStudio supports:
     - [Ubuntu](https://github.com/avegancafe/VimStudio/tree/main#ubuntu)
     - [macOS](https://github.com/avegancafe/VimStudio/tree/main#macos)
 - [Fonts](https://github.com/avegancafe/VimStudio#Fonts)
+- [Mappings](https://github.com/avegancafe/VimStudio#Mappings)
 
 A simple neovim configuration with easy configuration via [fennel-lang](https://fennel-lang.org/) and lua.
 
@@ -63,3 +64,7 @@ version](https://github.com/avegancafe/VimStudio/blob/main/assets/iosevka.ttf)
 in the repo as well. In general, any nerdfont should work though. If you want to
 use your own font, you can [patch your font yourself](https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FontPatcher.zip)
 (instructions on how to do so contained in the zip download fron nerdfonts).
+
+## Mappings
+
+Current key mappings can be found [here](https://github.com/avegancafe/VimStudio/blob/main/fnl/mappings.fnl).
