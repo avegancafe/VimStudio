@@ -63,13 +63,26 @@
 
 (lambda check-bin [binary-name]
   (let [handle (io.popen (.. "which " binary-name))
-               result (handle:read "*a")] (handle:close)
+        result (handle:read :*a)]
+    (handle:close)
     (> (length result) 0)))
-(if (check-bin :cargo) (table.insert servers :fennel_language_server) (print "[CONFIG] install rust in order to use fennel_language_server"))
-(if (check-bin :go) (do (table.insert servers :gopls) (table.insert servers :bufls)) (print "[CONFIG] install go in order to use LSPs"))
-(if (check-bin :npm) (do (table.insert servers :bashls) (table.insert servers :cssls) (table.insert servers :solidity) (table.insert servers :tailwindcss) (table.insert servers :vtsls) (table.insert servers :vtsls)) (print "[CONFIG] install node/npm to use LSPs"))
-(if (check-bin :brew) (table.insert servers :lua_ls) (print "[CONFIG] install homebrew in order to use LSPs"))
 
+(if (check-bin :cargo) (table.insert servers :fennel_language_server)
+    (print "[CONFIG] install rust in order to use fennel_language_server"))
+(if (check-bin :go) (do
+                      (table.insert servers :gopls)
+                      (table.insert servers :bufls))
+    (print "[CONFIG] install go in order to use LSPs"))
+(if (check-bin :npm) (do
+                       (table.insert servers :bashls)
+                       (table.insert servers :cssls)
+                       (table.insert servers :solidity)
+                       (table.insert servers :tailwindcss)
+                       (table.insert servers :vtsls)
+                       (table.insert servers :vtsls))
+    (print "[CONFIG] install node/npm to use LSPs"))
+(if (check-bin :brew) (table.insert servers :lua_ls)
+    (print "[CONFIG] install homebrew in order to use LSPs"))
 
 ((. (require :mason-lspconfig) :setup) {:ensure_installed servers})
 ((. (require :mason-lspconfig) :setup_handlers) {1 (fn [server-name]
