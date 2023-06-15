@@ -1,5 +1,5 @@
-<a href="https://github.com/avegancafe/VimStudio/raw/main/assets/logo.png"><img src="https://github.com/avegancafe/VimStudio/raw/main/assets/logo.png"
-width="100"/></a>
+<p align="center"><img src="https://github.com/avegancafe/VimStudio/raw/main/assets/logo.png"
+width="73%" /></p>
 
 ---
 
