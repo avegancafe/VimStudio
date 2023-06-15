@@ -10,7 +10,6 @@
 (normal-map "q:" :<nop>)
 (normal-map :<leader>dd ":TroubleToggle document_diagnostics<cr>")
 (normal-map :<leader>d ":TroubleToggle<cr>")
-(normal-map :<leader>h ":Dashboard<cr>")
 (normal-map :gQ
             ":echo \"Ex mode disabled. Re-enable in your mappigns if you'd like to use it.\"<cr>")
 
@@ -23,20 +22,11 @@
             (tset vim.opt :relativenumber true))))
 
 (vim.cmd ":command ToggleNumbers call v:lua.ToggleNumbers()")
-(tset _G :ShowEditsInCurrentDir
-      (fn []
-        (let [cwd (vim.fn.fnamemodify (vim.fn.expand "%:h") ":~:.")]
-          (vim.cmd (.. "TodoTrouble keywords=EDIT cwd=" cwd)))))
-
-(vim.cmd ":command ShowEditsInCurrentDir call v:lua.ShowEditsInCurrentDir()")
 (normal-map :<c-p> ":Telescope find_files<cr>" {:silent true})
 (normal-map :<c-b> ":Telescope buffers<cr>" {:silent true})
-(normal-map :<c-o> ":w<cr>" {:silent true})
-(normal-map :<c-f> ":ZenMode<cr>" {:silent true})
 (normal-map :<leader>f ":NvimTreeToggle<CR>" {:silent true})
 (normal-map :<leader>fr ":NvimTreeRefresh<CR>" {:silent true})
 (normal-map :<leader>ff ":NvimTreeFindFile<CR>" {:silent true})
-(normal-map :<leader>x ":noh<cr>" {:silent true})
 (normal-map :<tab> ":BufferLineCycleNext<cr>" {:silent true})
 (normal-map :<s-tab> ":BufferLineCyclePrev<cr>" {:silent true})
 (normal-map :<leader>ss ":SessionManager save_current_session<cr>")
@@ -54,7 +44,7 @@
 (normal-map :<leader>bg ":BufferLineGroupToggle " {:silent true})
 (normal-map :<leader>bf ":Neoformat<cr>" {:silent true})
 (normal-map :<leader>t ":Lspsaga term_toggle<cr>" {:silent true})
-(normal-map :<leader>bt ":lua require(\"cmds/switch_bufferline_mode\")()<cr>"
+(normal-map :<leader>bt ":lua require('cmds/switch_bufferline_mode')()<cr>"
             {:silent true})
 
 (normal-map :<leader>rs ":let @a=@*<cr>" {:silent true})
