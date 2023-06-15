@@ -3,6 +3,9 @@
 
 ---
 
+<img src="https://github.com/avegancafe/VimStudio/raw/main/assets/vimstudio.png"
+/>
+
 ## Table of contents
 
 - [Installation](https://github.com/avegancafe/VimStudio#Installation)
