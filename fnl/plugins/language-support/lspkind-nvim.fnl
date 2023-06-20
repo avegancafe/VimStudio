@@ -1,0 +1,1 @@
+ :onsails/lspkind.nvim
