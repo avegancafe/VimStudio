@@ -1,1 +1,1 @@
- :onsails/lspkind.nvim
+:onsails/lspkind.nvim

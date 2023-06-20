@@ -1,2 +1,1 @@
-
- :sbdchd/neoformat
+:sbdchd/neoformat
