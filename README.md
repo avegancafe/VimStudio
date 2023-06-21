@@ -10,7 +10,7 @@ VimStudio is meant to be a relatively barebones neovim configuration that is fea
 out of your way. Currently VimStudio supports:
 
 - 💻 LSP support with [mason.nvim](https://github.com/williamboman/mason-lspconfig.nvim) and [lspsaga.nvim](https://github.com/nvimdev/lspsaga.nvim) (configurable [here](https://github.com/avegancafe/VimStudio/blob/7e5f51450a03f805e71442a5ab70b98a25f2c4a0/fnl/initializers/lspconfig.fnl#L62-L85))
-- 💅 Code formatting via [neoformat](https://github.com/sbdchd/neoformat)
+- 💅 Code formatting with [neoformat](https://github.com/sbdchd/neoformat)
 - 🗒 Snippets with [luasnip](https://github.com/L3MON4D3/LuaSnip)
 - 🔍 File navigation with [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 
