@@ -17,6 +17,8 @@
                                                            (tset vim.opt
                                                                  :foldexpr
                                                                  "nvim_treesitter#foldexpr()"))})
-                 ((. (require :nvim-treesitter.configs) :setup) {:ensure_installed :all
+                 ((. (require :nvim-treesitter.configs) :setup) {:ensure_installed [; add whatever other languages you want here
+                                                                                    :typescript
+                                                                                    :go]
                                                                  :highlight {:enable true
                                                                              :additional_vim_regex_highlighting true}}))})

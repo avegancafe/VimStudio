@@ -1,6 +1,5 @@
-(import-macros {: deepcopy} :macros)
-
 (local nvim-lsp (require :lspconfig))
+
 (fn on-attach [client bufnr]
   ((. (require :lsp_signature) :on_attach) {:bind true
                                             :floating_window false
@@ -57,8 +56,6 @@
                             :workspace {:library (vim.api.nvim_list_runtime_paths)}}}})
 
 (vim.cmd " do User LspAttachBuffers ")
-((. (require :mason) :setup))
-((. (. (require :lspconfig) :vtsls) :setup) opts)
 (local servers [])
 
 (lambda check-bin [binary-name]
@@ -69,33 +66,27 @@
 
 (if (check-bin :cargo) (table.insert servers :fennel_language_server)
     (print "[CONFIG] install rust in order to use fennel_language_server"))
+
 (if (check-bin :go) (do
                       (table.insert servers :gopls)
                       (table.insert servers :bufls))
     (print "[CONFIG] install go in order to use LSPs"))
+
 (if (check-bin :npm) (do
                        (table.insert servers :bashls)
                        (table.insert servers :cssls)
                        (table.insert servers :solidity)
                        (table.insert servers :tailwindcss)
-                       (table.insert servers :vtsls)
                        (table.insert servers :vtsls))
     (print "[CONFIG] install node/npm to use LSPs"))
+
 (if (check-bin :brew) (table.insert servers :lua_ls)
     (print "[CONFIG] install homebrew in order to use LSPs"))
 
-((. (require :mason-lspconfig) :setup) {:ensure_installed servers})
-((. (require :mason-lspconfig) :setup_handlers) {1 (fn [server-name]
-                                                     ((. (. (require :lspconfig)
-                                                            server-name)
-                                                         :setup) opts))
-                                                 :gopls (fn []
-                                                          (local gopls-opts
-                                                                 (deepcopy opts))
-                                                          (local util
-                                                                 (require :lspconfig/util))
-                                                          (set gopls-opts.root_dir
-                                                               (util.root_pattern :go.mod))
-                                                          ((. (. (require :lspconfig)
-                                                                 :gopls)
-                                                              :setup) gopls-opts))})
+((. (require :mason) :setup) {:ui {:border :rounded}})
+
+((. (require :mason-registry) :refresh) (fn []
+                                          (each [_ server (ipairs servers)]
+                                            ((. (. nvim-lsp server) :setup) opts))))
+
+((. (require :mason-lspconfig) :setup) {:automatic_installation true})
