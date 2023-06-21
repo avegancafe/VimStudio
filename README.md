@@ -16,7 +16,8 @@ out of your way. Currently VimStudio supports:
 
 ## Table of contents
 
-- [Installation](https://github.com/avegancafe/VimStudio#Installation)
+- [Install
+  dependencies](https://github.com/avegancafe/VimStudio#install-dependencies)
     - [Ubuntu](https://github.com/avegancafe/VimStudio/tree/main#ubuntu)
     - [macOS](https://github.com/avegancafe/VimStudio/tree/main#macos)
 - [Fonts](https://github.com/avegancafe/VimStudio#Fonts)
@@ -35,7 +36,7 @@ After cloning, you are good to run `vim`. It will bootstrap itself by installing
 plugins. After finishing setting up Hotpot, lazy.nvim, and treesitter, it should
 be ready to go!
 
-## Installation
+## Install dependencies
 
 ### Ubuntu
 ```bash
