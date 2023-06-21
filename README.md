@@ -63,7 +63,7 @@ I would recommend using iosevka, which I've [linked a nerd-font-patched
 version](https://github.com/avegancafe/VimStudio/blob/main/assets/iosevka.ttf)
 in the repo as well. In general, any nerdfont should work though. If you want to
 use your own font, you can [patch your font yourself](https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FontPatcher.zip)
-(instructions on how to do so contained in the zip download fron nerdfonts).
+(instructions on how to do so contained in the zip download from nerdfonts).
 
 ## Mappings
 
